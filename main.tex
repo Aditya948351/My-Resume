@@ -1,12 +1,7 @@
-
-%%%%%%%%%%%%%%%%%
-% This is an updated CV template for Aditya Amol Patil using altacv.cls
-% Updated on 03 August 2025
-%%%%%%%%%%%%%%%%
-
 \documentclass[10pt,a4paper,withhyper]{altacv}
 \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
 \usepackage{paracol}
+\usepackage[most]{tcolorbox}
 
 \iftutex
   \setmainfont{Roboto Slab}
@@ -18,130 +13,184 @@
   \renewcommand{\familydefault}{\sfdefault}
 \fi
 
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
-\definecolor{DarkPastelRed}{HTML}{450808}
-\definecolor{PastelRed}{HTML}{8F0D0D}
-\definecolor{GoldenEarth}{HTML}{E7D192}
-\colorlet{name}{black}
-\colorlet{tagline}{PastelRed}
-\colorlet{heading}{DarkPastelRed}
-\colorlet{headingrule}{GoldenEarth}
-\colorlet{subheading}{PastelRed}
-\colorlet{accent}{PastelRed}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
+\definecolor{Black}{HTML}{000000}
+\definecolor{BeigeBg}{HTML}{EAE4D6}
+
+\colorlet{name}{Black}
+\colorlet{tagline}{Black}
+\colorlet{heading}{Black}
+\colorlet{headingrule}{Black}
+\colorlet{subheading}{Black}
+\colorlet{accent}{Black}
+\colorlet{emphasis}{Black}
+\colorlet{body}{Black}
 
 \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
 \renewcommand{\personalinfofont}{\footnotesize}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsectionfont}{\Large\rmfamily\bfseries\MakeUppercase}
 \renewcommand{\cvsubsectionfont}{\large\bfseries}
 \renewcommand{\cvItemMarker}{{\small\textbullet}}
 \renewcommand{\cvRatingMarker}{\faCircle}
 
-\name{Aditya Amol Patil}
-\tagline{Android Developer | AI-ML Enthusiast | Problem Solver}
-\photoR{2.8cm}{Globe_High}
-
-\personalinfo{%
-  \email{ap8548328@gmail.com}
-  \phone{+91 9657329173}
-  \mailaddress{Nashik, Maharashtra, India}
-  \location{Nashik, India}
-  \homepage{https://aditya-patil-portfolio.app}
-  \linkedin{aditya-patil-a7743a292}
-  \github{Aditya948351}
-  \printinfo{\faGlobe}{Gitroll: 7.4}[https://gitroll.io/profile/ubGQ1D9x6NWP8q3WI1eDXJrtekvx2]
+% Redefine cvevent to match the image layout
+\renewcommand{\cvevent}[4]{%
+  {\normalsize\textbf{#1}} \hfill {\normalsize #3} \par
+  \ifstrequal{#2}{}{}{
+  {\normalsize\textit{#2}} \ifstrequal{#4}{}{}{\hfill {\normalsize\textit{#4}}} \par
+  }
+  \vspace{0.25em}
 }
 
-\makecvheader
-\columnratio{0.6}
+\begin{document}
+
+\begin{tcolorbox}[colback=BeigeBg, colframe=BeigeBg, arc=0pt, outer arc=0pt, left=0.5cm, right=0.5cm, top=0.3cm, bottom=0.3cm, boxsep=0pt, width=\textwidth]
+\begin{minipage}[b]{0.5\textwidth}
+\Huge\textbf{ADITYA AMOL PATIL} \\
+\large Android Developer
+\end{minipage}%
+\begin{minipage}[b]{0.5\textwidth}
+\raggedleft
+\small
+Nashik, Maharashtra \textbar{} +91 9657329173 \\
+adityapatil9721@gmail.com \textbar{} github.com/Aditya948351 \\
+linkedin.com/in/aditya-patil \textbar{} Gitroll: 7.4 \\
+adityap-portfolio.web.app
+\end{minipage}
+\end{tcolorbox}
+
+\vspace{0.5em}
+
+\cvsection{Summary}
+Experienced Software Engineering student specializing in Android development and AI. Proficient in Kotlin, Flutter, Python, and Jetpack Compose. Passionate about Secure Coding and Application Security, with a strong interest in building scalable, secure mobile applications. Eager to leverage skills in a security-focused environment like Checkmarx. Currently strengthening Computer Science fundamentals through Data Structures \& Algorithms and system design while continuing to build scalable Android and AI-powered applications.
+
+\vspace{0.5em}
+
+\columnratio{0.38}
 \begin{paracol}{2}
 
+\cvsection{Education}
+\textbf{Amrutvahini College of Engineering} \\
+BE in Information Technology \\
+Sangamner, Maharashtra \\
+2023 -- 2027 \textbar{} CGPA: 8.0/10
+
+\vspace{1em}
+
+\cvsection{Core Competencies}
+\textbf{Problem Solving} \textbullet{} \textbf{Object-Oriented Programming} \\
+\textbf{REST API Integration} \textbullet{} \textbf{Mobile App Architecture} \\
+\textbf{Algorithmic Thinking} \textbullet{} \textbf{Secure Coding}
+
+\vspace{1em}
+
+\cvsection{Current Learning}
+\begin{itemize}
+  \item Data Structures \& Algorithms (Java)
+  \item System Design Fundamentals
+\end{itemize}
+
+\vspace{1em}
+
+\cvsection{Skills}
+\textbf{Computer Science:} \\
+Problem Solving, Algorithmic Thinking, Time \& Space Complexity (Basic) \\[0.5em]
+\textbf{Programming Languages:} \\
+Kotlin, Java, Python, JavaScript, SQL, C++ \\[0.5em]
+\textbf{Mobile Development:} \\
+Android (Jetpack Compose, XML), MVVM, Retrofit, Room, Coroutines \\[0.5em]
+\textbf{Backend \& Web:} \\
+RESTful APIs, Node.js, Flask, Firebase (Auth, Firestore), HTML, CSS, React, Next.js \\[0.5em]
+\textbf{Software Engineering:} \\
+API Design, Git, GitHub, Authentication Flows, Modular Architecture \\[0.5em]
+\textbf{AI / ML:} \\
+TensorFlow, OpenCV, YOLOv8, Model Integration \\[0.5em]
+\textbf{Tools:} \\
+Android Studio, Postman, Figma
+
+\vspace{1em}
+
+\cvsection{Certifications}
+\textbf{Google - Gen AI Exchange Program}
+\begin{itemize}
+  \item Generative AI \textbullet{} Prompt Engineering
+  \item Model Deployment \textbullet{} Responsible AI
+\end{itemize}
+\vspace{0.5em}
+\textbf{OpenCV University - AI \& Computer Vision Bootcamps} \\
+Mastered 5 bootcamps (100\% Grade): PyTorch, TensorFlow, Keras, OpenCV, VLMs. Implemented YOLO11, Faster/Mask R-CNN, OpenPose, CLIP, Qwen2.5-VL, Object Tracking, \& HDR.
+
+\vspace{1em}
+
+\cvsection{Achievements}
+\textbf{Hackathons:} Participated in 10+ National Hackathons. \\[0.5em]
+\textbf{SIH Finalist:} Smart India Hackathon Grand Finale. \\[0.5em]
+\textbf{IEEE Summer of Code:} Top 50 Open Source Contributor. \\[0.5em]
+\textbf{DevPath:} Led community of 1000+ developers.
+
+\switchcolumn
+
 \cvsection{Experience}
-
-\cvevent{Android Developer Intern}{Google | Eduskills Foundation | AICTE}{Jan 2025 -- Apr 2025}{Remote}
+\cvevent{Android Developer Intern}{Google | EduSkills Foundation}{Jan 2025 -- Apr 2025}{Remote}
 \begin{itemize}
-  \item Contributed 4+ Android modules to open-source projects, enhancing UI responsiveness by 30%.
-  \item Integrated Retrofit, Firebase, and Cloud Firestore to build scalable backend services.
-  \item Developed startup-grade Android apps through project-based learning.
+  \item Contributed 4+ Android modules to open-source projects, improving UI responsiveness by 30\%.
+  \item Architected 3+ production-grade Android Apps (MVVM) integrating Retrofit \& Firebase, handling 500+ daily transactions.
 \end{itemize}
 
-\divider
+\vspace{0.5em}
 
-\cvevent{Python Developer Intern}{Swarajya Robotics}{Nov 2024 -- Dec 2024}{Nashik, India}
+\cvevent{Software Engineering Virtual Intern}{Accenture Nordics}{June 2024}{Remote}
 \begin{itemize}
-  \item Engineered a Facial Recognition Door Lock System using Python, OpenCV, Raspberry Pi.
-  \item Built backend logic to control hardware and store data via SQLite.
-  \item Designed a Jetpack Compose-based Agri Assistant App with real-time ML insights.
+  \item Improved client performance metrics by 20\% via data-driven insights and process optimization.
+  \item Formulated tech transformation strategies, reducing project delivery timelines by 15\%.
 \end{itemize}
 
-\divider
+\vspace{0.5em}
 
-\cvevent{Software Engineering Virtual Internship}{Accenture Nordics (Forage)}{June 2025}{Virtual}
+\cvevent{Project Trainee}{ABB}{Aug 2024 -- Nov 2024}{On-site}
 \begin{itemize}
-  \item Applied data-driven strategies to boost simulated client retention by 20%.
-  \item Aligned Agile + Waterfall methodologies in simulated consulting deliverables.
+  \item Spearheaded digitalization initiatives to automate process flows aligned with Industry 4.0, reducing manual effort by 25\%.
+  \item Designed automated solutions using Power Automate and Power Apps, streamlining workflows for 50+ employees.
+  \item Optimized production operations by analyzing on-site processes and implementing efficient digital tools.
 \end{itemize}
 
 \cvsection{Projects}
 
-\cvevent{Code Brahma – AI Debugging \& Learning Assistant}{}{}{Jetpack Compose, Firebase, Flask, GitHub OAuth}
+\cvevent{DevPath Community Website}{}{Jan 2025 -- Present}{}
 \begin{itemize}
-  \item Developed an AI-powered Android platform for voice-based code debugging, documentation access, and learning tools.
+  \item Orchestrated a community of 1000+ active developers; built dynamic platform (Next.js).
+  \item Implemented secure auth and real-time event updates, boosting engagement by 25\%.
 \end{itemize}
 
-\divider
+\vspace{0.5em}
 
-\cvevent{Real-Time Traffic Optimization System}{}{}{Flask, Hugging Face, SQLite, YOLOv8, TensorFlow, React}
+\cvevent{Saksham | Smart India Hackathon Project}{}{Jan 2025 -- Present}{}
 \begin{itemize}
-  \item Built a live traffic routing and monitoring system using YOLOv8 and Djikstra’s algorithm.
-  \item Integrated Agentic AI with autonomous traffic optimization logic.
+  \item Engineered an enterprise-grade Android platform connecting citizens to 100+ government schemes using Jetpack Compose.
+  \item Integrated AI-based OCR for document verification and multilingual support (9 languages) via ML Kit.
 \end{itemize}
 
-\divider
+\vspace{0.5em}
 
-\cvevent{EngiLearn – AI-based Quiz Generator}{}{}{React, Node.js, Jetpack Compose}
+\cvevent{Code Brahma : AI Debugging}{}{Oct 2024}{}
 \begin{itemize}
-  \item Developed a quiz engine to auto-generate questions from PDFs using AI.
-  \item Deployed topic-specific quiz platform for engineering students.
+  \item Created an Android app for code debugging, reducing debug time by 30\% via AI insights.
+  \item Integrated GitHub OAuth and Firebase for secure, seamless user authentication.
 \end{itemize}
 
-\switchcolumn
+\vspace{0.5em}
 
-\cvsection{My Life Philosophy}
-\begin{quote}
-``Crafting real-world solutions with clean design principles, scalable code, and AI-driven intelligence.''
-\end{quote}
-
-\cvsection{Achievements}
-
-\cvachievement{\faTrophy}{Finalist – Impetus 2025, PICT Pune}{Presented Code Brahma – shortlisted among top 20 national entries.}
-\divider
-\cvachievement{\faTrophy}{20+ Contributions – IEEE Summer of Code}{National Institute of Technology (NIT), Patna}
-\divider
-\cvachievement{\faTrophy}{National Hackathon Finalist}{Led 6-member team developing real-time ML-based traffic optimizer.}
-
-\cvsection{Skills}
-
-\cvtag{Android – Jetpack Compose, MVVM, Kotlin}
-\cvtag{Python, Flask, TensorFlow, OpenCV}
-\cvtag{AI/ML – Agentic AI, Mediapipe}
-\cvtag{Cloud – Azure, AWS, CI/CD}
-\cvtag{Web – HTML, CSS, React, SQLite}
-\cvtag{Dev Tools – Git, Postman, Figma, Blender}
-
-\cvsection{Languages}
-\cvskill{English}{5}
-\divider
-\cvskill{Hindi}{5}
-\divider
-\cvskill{Marathi}{5}
-
-\cvsection{Education}
-\cvevent{B.E. in Information Technology}{Amrutvahini College of Engineering}{2023 -- 2027}{SPPU, Sangamner}
+\cvevent{Engilearn}{}{Nov 2024 -- Present}{}
 \begin{itemize}
-  \item CGPA: 8.0 / 10
+  \item Launched a fully scalable SaaS app for AI-based quiz generation, deployed on IaaS (AWS).
+  \item Engineered a robust backend to handle concurrent users, ensuring 99.9\% uptime.
+\end{itemize}
+
+\vspace{0.5em}
+
+\cvevent{Traffic Optimization System}{}{Sep 2024}{}
+\begin{itemize}
+  \item Built a live traffic monitoring system using YOLOv8 \& Agentic AI, achieving 95\% detection accuracy.
+  \item Guided a 6-member team to deploy the solution, optimizing route efficiency by 20\%.
 \end{itemize}
 
 \end{paracol}
