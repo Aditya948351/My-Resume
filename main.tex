@@ -15,13 +15,14 @@
 
 \definecolor{Black}{HTML}{000000}
 \definecolor{BeigeBg}{HTML}{EAE4D6}
+\definecolor{MyBlue}{HTML}{1A73E8}
 
 \colorlet{name}{Black}
 \colorlet{tagline}{Black}
 \colorlet{heading}{Black}
 \colorlet{headingrule}{Black}
 \colorlet{subheading}{Black}
-\colorlet{accent}{Black}
+\colorlet{accent}{MyBlue}
 \colorlet{emphasis}{Black}
 \colorlet{body}{Black}
 
@@ -35,30 +36,44 @@
 % Redefine cvevent to match the image layout
 \renewcommand{\cvevent}[4]{%
   \vspace{0.8em}
-  {\normalsize\textbf{#1}} \hfill {\normalsize #3} \par
-  \ifstrequal{#2}{}{}{
-  {\normalsize\textit{#2}} \ifstrequal{#4}{}{}{\hfill {\normalsize\textit{#4}}} \par
+  {\normalsize\textbf{#1}} \par
+  \ifstrequal{#2}{}{}{{\normalsize\rmfamily\textcolor{MyBlue}{\textbf{#2}}} \par}
+  \vspace{0.25em}
+  \ifstrequal{#3}{}{}{%
+    \ifstrequal{#4}{}{%
+      {\small\textcolor{Black}{\faCalendar* \hspace{0.2em} #3}}\par
+    }{%
+      {\small\textcolor{Black}{\faCalendar* \hspace{0.2em} #3 \hspace{1.5em} \faMapMarker \hspace{0.2em} #4}}\par
+    }
   }
   \vspace{0.25em}
 }
 
+\newcommand{\cvinterest}[2]{%
+  \makebox[1.5em][c]{\Large\color{accent}#1}\hspace{0.5em}{\bfseries\textcolor{emphasis}{#2}}\par\vspace{0.2em}
+}
+
+% Redefine divider to be a faint dotted line
+\renewcommand{\divider}{\vspace{0.3em}\textcolor{body!20}{\hdashrule{\linewidth}{0.4pt}{1pt 2pt}}\vspace{0.3em}}
+
 \begin{document}
 
-\begin{tcolorbox}[colback=BeigeBg, colframe=BeigeBg, arc=0pt, outer arc=0pt, left=0.5cm, right=0.5cm, top=0.3cm, bottom=0.3cm, boxsep=0pt, width=\textwidth]
-\begin{minipage}[b]{0.5\textwidth}
-\Huge\textbf{ADITYA AMOL PATIL}
-\end{minipage}%
-\begin{minipage}[b]{0.5\textwidth}
-\raggedleft
-\small
-Nashik, Maharashtra - 422006 \textbar{} +91 9657329173 \\
-\faEnvelope\ \href{mailto:adityapatil9721@gmail.com}{adityapatil9721@gmail.com} \textbar{} \faGithub\ \href{https://github.com/Aditya948351}{GitHub} \\
-\faLinkedin\ \href{https://linkedin.com/in/aditya-patil}{LinkedIn} \textbar{} \faCode\ Gitroll: 8.0 \\
+\begin{minipage}[b]{\linewidth}
+  {\Huge\textbf{ADITYA AMOL PATIL}} \\[0.4em]
+  {\Large\rmfamily\textcolor{MyBlue}{\textbf{Founder and Community Lead}}} \\[0.6em]
+  {\small
+    \textcolor{MyBlue}{\faPhone} \hspace{0.2em} +91 9657329173 \hspace{1em} 
+    \textcolor{MyBlue}{\faEnvelope} \hspace{0.2em} \href{mailto:adityapatil9721@gmail.com}{adityapatil9721@gmail.com} \hspace{1em} 
+    \textcolor{MyBlue}{\faMapMarker} \hspace{0.2em} Nashik, Maharashtra 422006 \\[0.4em]
+    \textcolor{MyBlue}{\faGithub} \hspace{0.2em} \href{https://github.com/Aditya948351}{github.com/Aditya948351} \hspace{1em}
+    \textcolor{MyBlue}{\faLinkedin} \hspace{0.2em} \href{https://linkedin.com/in/aditya-patil}{linkedin.com/in/aditya-patil-a7743a292} \hspace{1em}
+    \textcolor{MyBlue}{\faCode} \hspace{0.2em} Gitroll: 8.0
+  }
 \end{minipage}
-\end{tcolorbox}
+\vspace{1.5em}
 
 \cvsection{Summary}
-Experienced Software Engineering student specializing in software development and AI. Proficient in Kotlin, Python, and modern frameworks. Passionate about Secure Coding and Application Security, with a strong interest in building scalable, secure applications. Eager to leverage skills in a security-focused environment like Checkmarx. Currently strengthening Computer Science fundamentals through Data Structures \& Algorithms and system design while continuing to build scalable software and AI-powered solutions.
+Software engineering student with experience in Android development, backend engineering, and AI and Machine Learning based software solutions. Proficient in Kotlin, Python, REST APIs, Flask, SQL, and Firebase, with practical experience gained through internships, hackathons, and open source contributions. Founder of DevPath Community, actively fostering developer growth through technical content and collaboration. Currently strengthening expertise in Data Structures & Algorithms, system design, and scalable software engineering while pursuing software engineering opportunities.
 
 \columnratio{0.38}
 \begin{paracol}{2}
@@ -67,124 +82,117 @@ Experienced Software Engineering student specializing in software development an
 \textbf{Amrutvahini College of Engineering} \\
 BE in Information Technology \\
 Sangamner, Maharashtra \\
-2023 -- 2027 \textbar{} CGPA: 8.0/10
-
-\cvsection{Core Competencies}
-\textbf{Problem Solving} \textbullet{} \textbf{Object-Oriented Programming} \\
-\textbf{REST API Integration} \textbullet{} \textbf{Mobile App Architecture} \\
-\textbf{Algorithmic Thinking} \textbullet{} \textbf{Secure Coding}
-
-\cvsection{Current Learning}
-\begin{itemize}
-  \item Data Structures \& Algorithms (Java)
-  \item System Design Fundamentals
-\end{itemize}
+2023 to 2027 \textbar{} CGPA: 8.0/10 \\[0.5em]
+\textbf{Relevant Coursework:} Data Structures \& Algorithms, Object-Oriented Design, DBMS, Operating Systems, Computer Networks
 
 \cvsection{Skills}
-\textbf{Languages:} Kotlin, Java, Python, JavaScript, SQL, C++ \\[0.5em]
-\textbf{Mobile \& Web:} Android, Jetpack Compose, React, Next.js, Node.js, Flask \\[0.5em]
-\textbf{Backend \& Database:} REST APIs, Firebase, Room, Authentication \\[0.5em]
-\textbf{AI / ML:} TensorFlow, OpenCV, YOLOv8 \\[0.5em]
-\textbf{Tools:} Git, GitHub, Android Studio, Postman, Figma
+\textbf{Languages:} Kotlin, Java, Python, JavaScript, C++, SQL \\[0.5em]
+\textbf{Frameworks:} Android, Jetpack Compose, React, Next.js, Node.js, Flask, Django \\[0.5em]
+\textbf{Databases \& Cloud:} Firebase, Room, AWS, MySQL \\[0.5em]
+\textbf{DevOps:} Docker, GitHub Actions, Model Deployment \\[0.5em]
+\textbf{Tools:} Git, GitHub, Postman, Figma \\[0.5em]
+\textbf{AI/ML:} TensorFlow, PyTorch, Keras, OpenCV, YOLOv8/11, VLMs, Generative AI, Prompt Engineering
 
-\cvsection{Hobbies}
-\textbf{Exploring AI \& Emerging Tech} \textbullet{} \textbf{Playing Chess} \\
-\textbf{Listening to Tech Podcasts} \textbullet{} \textbf{Following Geopolitics} \\
-\textbf{Reading Non-fiction (Tech, Business)}
+\cvsection{Interests}
+\cvinterest{\faRobot}{Exploring AI \& Emerging Tech}
+\divider
+\cvinterest{\faChessKnight}{Playing Chess}
+\divider
+\cvinterest{\faMusic}{Listening to Tech Podcasts}
+\divider
+\cvinterest{\faGlobe}{Following Geopolitics}
+\divider
+\cvinterest{\faBook}{Reading Non-fiction (Tech, Business)}
 
+\vspace{2em}
 \cvsection{Certifications}
-\textbf{Google - Gen AI Exchange Program}
-\begin{itemize}
-  \item Generative AI \textbullet{} Prompt Engineering
-  \item Model Deployment \textbullet{} Responsible AI
-\end{itemize}
+\textbf{Google Gen AI Exchange Program}
 \vspace{0.8em}
 
-\textbf{OpenCV University - AI \& Computer Vision Bootcamps} \\
-Mastered 5 bootcamps (100\% Grade): PyTorch, TensorFlow, Keras, OpenCV, VLMs. Implemented YOLO11, Faster/Mask R-CNN, OpenPose, CLIP, Qwen2.5-VL, Object Tracking, \& HDR.
+\textbf{OpenCV University - AI \& Computer Vision Bootcamps}
 \vspace{0.8em}
 
-\textbf{Checkmarx Codebashing - Application Security} \\
-Certified in Secure Coding (Java \& .NET). Mastered mitigation for SQL Injection, XXE, Command Injection, and Session Fixation.
-\vspace{0.8em}
+\textbf{Edunet Foundation \& AICTE - Full Stack \& AI Tools}
 
-\textbf{Edunet Foundation \& AICTE - Full Stack \& AI Tools} \\
-Mastered Python Django, MySQL, Git/GitHub, and Prompt Engineering for accelerated development. Built a Kotlin-based project (Drishti) and integrated OpenRouter API.
-
-\cvsection{Achievements \& Leadership}
-\textbf{GSSoC 2026 Top 50 Contributor:} Merged 100+ PRs as Contributor, Project Admin, and Ambassador. \\[0.5em]
-\textbf{Google Student Ambassador 2026:} Promoted Gemini \& AI tools; demonstrated strong soft skills, public speaking, and community leadership. \\[0.5em]
-\textbf{LetsUpgrade Ambassador:} Organized hackathons, quizzes, and competitions for student engagement. \\[0.5em]
-\textbf{IEEE Summer of Code:} Top 50 Open Source Contributor. \\[0.5em]
-\textbf{SIH Finalist:} Smart India Hackathon Grand Finale.
+\cvsection{Key Achievements}
+\cvachievement{\faRobot}{GSSoC 2026 Top 50 Contributor}{Merged 1000+ PRs as Contributor, Project Admin, and Ambassador}
+\divider
+\cvachievement{\faLinkedin}{Google Student Ambassador 2026}{Promoted Gemini \& AI tools; demonstrated strong soft skills, public speaking, and community leadership}
+\divider
+\cvachievement{\faBullhorn}{LetsUpgrade Ambassador}{Organized hackathons, quizzes, and competitions for student engagement}
+\divider
+\cvachievement{\faRobot}{IEEE Summer of Code}{Top 50 Open Source Contributor}
+\divider
+\cvachievement{\faMedal}{SIH Finalist}{Smart India Hackathon 2025 Grand Finalist}
+\cvachievement{\faMedal}{Won various National Hackathons}
 
 \switchcolumn
 
 \cvsection{Experience}
-\cvevent{Founder \& Community Lead}{DevPath Community}{Jan 2025 -- Present}{Nashik, India}
+\cvevent{Founder \& Community Lead}{DevPath Community}{01/2025 to Present}{Nashik, India}
 \begin{itemize}
-  \item Founded and lead a developer community focused on Android, AI, open source, hackathons, and career development, reaching 1,000+ active members.
+  \item Founded and led a developer community focused on Android, AI, open source, hackathons, and career development, reaching a large active member base.
   \item Grew the community to 300+ LinkedIn followers through consistent technical content and community engagement.
-  \item Organized technical discussions, resource sharing, mentorship initiatives, and open-source collaboration opportunities.
+  \item Conducted 15+ technical discussions, resource sharing sessions, and mentorship initiatives, driving multiple open source collaboration opportunities.
   \item Built a platform connecting 500+ students and developers across India to foster learning and professional growth.
 \end{itemize}
 
-\cvevent{Software Development Intern}{Civora Nexus Pvt. Ltd.}{Jun 2025 -- Aug 2025}{Pune, India}
+\cvevent{Software Development Intern}{Civora Nexus Pvt. Ltd.}{06/2025 to 08/2025}{Pune, India}
 \begin{itemize}
-  \item Developed a Python Flask-based City Resource Allocation Dashboard with SQL database integration, improving resource tracking efficiency by 40\%.
-  \item Built 10+ backend features and REST APIs, contributing to application development in a collaborative open-source environment and reducing response times by 20\%.
-  \item Worked under the mentorship of senior engineers, contributing to backend development using Python, Flask, SQL, and Git to accelerate deployment cycles by 15\%.
+  \item Developed a Python Flask based City Resource Allocation Dashboard with SQL database integration, improving resource tracking efficiency.
+  \item Built backend features and REST APIs, contributing to application development in a collaborative open source environment and optimizing response times.
+  \item Worked under the mentorship of senior engineers, contributing to backend development using Python, Flask, SQL, and Git to accelerate deployment cycles.
 \end{itemize}
 
-\cvevent{Android Developer Intern}{Google | EduSkills Foundation}{Jan 2025 -- Apr 2025}{Remote, India}
+\cvevent{Android Developer Intern}{Google | EduSkills Foundation}{01/2025 to 04/2025}{Remote, India}
 \begin{itemize}
-  \item Contributed 4+ Android modules to open-source projects, improving UI responsiveness by 30\%.
-  \item Architected 3+ production-grade Android Apps (MVVM) integrating Retrofit \& Firebase, handling 500+ daily transactions.
+  \item Contributed 4+ Android modules to open source projects, improving UI responsiveness.
+  \item Architected 3+ production grade Android Apps (MVVM) integrating Retrofit \& Firebase, handling daily transactions.
 \end{itemize}
 
-\cvevent{Software Engineering Virtual Intern}{Accenture Nordics}{Jun 2024 -- Jul 2024}{Remote, Sweden}
+\cvevent{Software Engineering Virtual Intern}{Accenture Nordics}{06/2024 to 07/2024}{Remote}
 \begin{itemize}
-  \item Improved client performance metrics by 20\% via data-driven insights and process optimization.
-  \item Formulated tech transformation strategies, reducing project delivery timelines by 15\%.
+  \item Improved client performance metrics via data driven insights and process optimization.
+  \item Formulated tech transformation strategies, reducing project delivery timelines.
 \end{itemize}
 
-\cvevent{Project Trainee}{ABB}{Aug 2024 -- Nov 2024}{Nashik, India}
+\cvevent{Project Trainee}{ABB}{08/2024 to 11/2024}{Nashik, India}
 \begin{itemize}
-  \item Spearheaded digitalization initiatives to automate process flows aligned with Industry 4.0, reducing manual effort by 25\%.
+  \item Spearheaded digitalization initiatives to automate process flows aligned with Industry 4.0, reducing manual effort.
   \item Designed automated solutions using Power Automate and Power Apps, streamlining workflows for 50+ employees.
-  \item Optimized production operations by analyzing on-site processes and implementing efficient digital tools.
+  \item Improved production operations by analyzing on-site processes and implementing efficient digital tools, boosting overall output efficiency.
 \end{itemize}
 
 \cvsection{Projects}
 
-\cvevent{DevPath Community Website}{}{Jan 2025 -- Present}{}
+\cvevent{\href{https://github.com/devpathindcommunity-india/DevPath-Web}{DevPath Community Website}}{}{}{}
 \begin{itemize}
   \item Orchestrated a community of 1000+ active developers; built dynamic platform (Next.js).
-  \item Implemented secure auth and real-time event updates, boosting engagement by 25\%.
+  \item Implemented secure auth and real-time event updates, boosting community engagement.
 \end{itemize}
 
-\cvevent{Saksham | Smart India Hackathon Project}{}{Jan 2025 -- Present}{}
+\cvevent{Saksham | Smart India Hackathon Project}{}{}{}
 \begin{itemize}
-  \item Engineered an enterprise-grade Android platform connecting citizens to 100+ government schemes using Jetpack Compose.
-  \item Integrated AI-based OCR for document verification and multilingual support (9 languages) via ML Kit.
+  \item Engineered an enterprise grade Android platform connecting citizens to 100+ government schemes using Jetpack Compose.
+  \item Integrated AI based OCR for document verification and multilingual support (9 languages) via ML Kit.
 \end{itemize}
 
-\cvevent{Code Brahma : AI Debugging}{}{Oct 2024}{}
+\cvevent{\href{https://github.com/Aditya948351/CodeBrahma-An-app-for-Developers}{Code Brahma : AI Debugging}}{}{}{}
 \begin{itemize}
-  \item Created an Android app for code debugging, reducing debug time by 30\% via AI insights.
+  \item Created an Android app for code debugging, reducing debug time via AI insights.
   \item Integrated GitHub OAuth and Firebase for secure, seamless user authentication.
 \end{itemize}
 
-\cvevent{Engilearn}{}{Nov 2024 -- Present}{}
+\cvevent{Engilearn}{}{}{}
 \begin{itemize}
-  \item Launched a fully scalable SaaS app for AI-based quiz generation, deployed on IaaS (AWS).
-  \item Engineered a robust backend to handle concurrent users, ensuring 99.9\% uptime.
+  \item Launched a fully scalable SaaS app for AI based quiz generation, deployed on IaaS (AWS).
+  \item Engineered a robust backend to handle concurrent users, ensuring high availability and uptime.
 \end{itemize}
 
-\cvevent{Traffic Optimization System}{}{Sep 2024}{}
+\cvevent{Traffic Optimization System}{}{}{}
 \begin{itemize}
-  \item Built a live traffic monitoring system using YOLOv8 \& Agentic AI, achieving 95\% detection accuracy.
-  \item Guided a 6-member team to deploy the solution, optimizing route efficiency by 20\%.
+  \item Built a live traffic monitoring system using YOLOv8 \& Agentic AI, achieving high detection accuracy.
+  \item Guided a 6 member team to deploy the solution, optimizing route efficiency.
 \end{itemize}
 
 \end{paracol}
